@@ -50,6 +50,7 @@
 
         <Button
             android:layout_marginTop="25dp"
+            android:id="@+id/btnRandomTest"
             android:layout_width="350dp"
             android:layout_height="100dp"
             android:textSize="22dp"
@@ -63,6 +64,7 @@
         <Button
             android:layout_marginTop="30dp"
             android:layout_width="350dp"
+            android:id="@+id/btnTestKit"
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:textColor="@color/black"
@@ -76,6 +78,7 @@
             android:layout_marginTop="30dp"
             android:layout_width="350dp"
             android:layout_height="100dp"
+            android:id="@+id/btnTrafficLight"
             android:textColor="@color/black"
             android:textSize="22dp"
             android:textStyle="bold"
@@ -88,6 +91,7 @@
             android:layout_marginTop="30dp"
             android:layout_width="350dp"
             android:layout_height="100dp"
+            android:id="@+id/btnTip"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:background="@drawable/custom_btn1"
