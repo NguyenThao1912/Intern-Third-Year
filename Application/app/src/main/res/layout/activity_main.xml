@@ -1,18 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    tools:context=".MainActivity"   >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textStyle="bold"
+              android:layout_marginLeft="15dp"
+              android:textSize="20dp"
+              android:text="Phía trước tay lái là"/>
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="#4CAF50"
+              android:textStyle="bold"
+              android:textSize="20dp"
+              android:layout_marginLeft="5dp"
+              android:text="sự sống"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="180dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="Hãy lái xe bằng cả"
+              />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+          <ImageView
+              android:layout_width="37dp"
+              android:layout_height="match_parent"
+              android:src="@drawable/love" />
+        </LinearLayout>
+
+
+        <Button
+            android:layout_marginTop="25dp"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:background="@drawable/custom_btn1"
+            android:textColor="@color/black"
+            android:drawableRight="@drawable/ic_shuffle"
+            android:layout_gravity="center"
+            android:text="Đề Ngẫu Nhiên"
+            />
+        <Button
+            android:layout_marginTop="30dp"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="22dp"
+            android:drawableRight="@drawable/ic_checklist"
+            android:background="@drawable/custom_btn1"
+            android:text="Thi Theo Bộ Đề"
+            />
+        <Button
+            android:layout_marginTop="30dp"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:textColor="@color/black"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:drawableRight="@drawable/ic_traffic_lights"
+            android:background="@drawable/custom_btn1"
+            android:layout_gravity="center"
+            android:text="Biển Báo"
+            />
+        <Button
+            android:layout_marginTop="30dp"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:background="@drawable/custom_btn1"
+            android:textSize="22dp"
+            android:drawableRight="@drawable/ic_chat"
+            android:layout_gravity="center"
+            android:text="Mẹo Ghi Nhớ"
+            />
+
+</LinearLayout>
