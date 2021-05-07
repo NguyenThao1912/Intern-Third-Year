@@ -52,6 +52,7 @@
             android:layout_marginTop="25dp"
             android:id="@+id/btnRandomTest"
             android:layout_width="350dp"
+            android:onClick="DeNgauNhien"
             android:layout_height="100dp"
             android:textSize="22dp"
             android:textStyle="bold"
@@ -63,6 +64,7 @@
             android:text="Đề Ngẫu Nhiên"
             />
         <androidx.appcompat.widget.AppCompatButton
+            android:onClick="Dethi"
             android:backgroundTint="#FED468"
             android:layout_marginTop="30dp"
             android:layout_width="350dp"
@@ -84,6 +86,7 @@
             android:id="@+id/btnTrafficLight"
             android:textColor="@color/black"
             android:textSize="22dp"
+            android:onClick="LoaiBienBao"
             android:textStyle="bold"
             android:drawableRight="@drawable/ic_traffic_lights"
             android:background="@drawable/custom_btn1"
@@ -94,6 +97,7 @@
             android:backgroundTint="#68B6FE"
             android:layout_marginTop="30dp"
             android:layout_width="350dp"
+            android:onClick="LoiKhuyen"
             android:layout_height="100dp"
             android:id="@+id/btnTip"
             android:textStyle="bold"

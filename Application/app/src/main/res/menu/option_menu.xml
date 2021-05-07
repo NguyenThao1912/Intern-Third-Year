@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="Setting"
+        android:id="@+id/change_licence"
         android:icon="@drawable/gear"
         app:showAsAction="always"
         />
