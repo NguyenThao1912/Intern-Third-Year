@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DrivingLicense">
         <activity android:name=".TestKit"
+            android:icon="@drawable/"
             android:label="Đề Thi Bằng A1"></activity>
         <activity
             android:name=".MainActivity"
             android:label="Ôn Thi GPLX">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
