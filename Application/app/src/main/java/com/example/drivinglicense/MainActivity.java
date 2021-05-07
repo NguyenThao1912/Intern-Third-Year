@@ -18,9 +18,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        dbManager = new DBManager(this);
         setContentView(R.layout.activity_main);
-
+        dbManager = new DBManager(this);
+        dbManager.getAllQuestion();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
