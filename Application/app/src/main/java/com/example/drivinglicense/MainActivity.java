@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.drivinglicense.adapter.LicenceAdapter;
 import com.example.drivinglicense.db.DBManager;
+import com.example.drivinglicense.global.AppGlobal;
 import com.example.drivinglicense.model.Licence;
 
 import java.util.ArrayList;
@@ -53,111 +55,81 @@ public class MainActivity extends AppCompatActivity {
         {
             case A1:
             {
-//                Toast.makeText(this, "" , Toast.LENGTH_SHORT).show();
-//                return true;
                 //TODO Mở màn hình thay loại bằng lái
-                Intent intentA1 = new Intent(MainActivity.this, TestKit.class);
-                Bundle bundle = new Bundle();
-                bundle.putInt("Z_PK", 61);
-                intentA1.putExtras(bundle);
-                startActivity(intentA1);
+                AppGlobal.licence.setZ_PK(61);
+                Toast.makeText(this, "Đề thi hiện tại A1", Toast.LENGTH_SHORT).show();
                 break;
             }
 
             case A2:
             {
                 //TODO Mở màn hình thay loại bằng lái
-                Intent intentA2 = new Intent(MainActivity.this, TestKit.class);
-                Bundle bundle = new Bundle();
-                bundle.putInt("Z_PK", 62);
-                intentA2.putExtras(bundle);
-                startActivity(intentA2);
+                AppGlobal.licence.setZ_PK(62);
+                Toast.makeText(this, "Đề thi hiện tại A2", Toast.LENGTH_SHORT).show();
                 break;
             }
 
             case A3:
             {
                 //TODO Mở màn hình thay loại bằng lái
-                Intent intentA3 = new Intent(MainActivity.this, TestKit.class);
-                Bundle bundle = new Bundle();
-                bundle.putInt("Z_PK", 63);
-                intentA3.putExtras(bundle);
-                startActivity(intentA3);
+                AppGlobal.licence.setZ_PK(63);
+                Toast.makeText(this, "Đề thi hiện tại A3", Toast.LENGTH_SHORT).show();
                 break;
             }
 
             case A4:
             {
                 //TODO Mở màn hình thay loại bằng lái
-                Intent intentA4 = new Intent(MainActivity.this, TestKit.class);
-                Bundle bundle = new Bundle();
-                bundle.putInt("Z_PK", 64);
-                intentA4.putExtras(bundle);
-                startActivity(intentA4);
+                AppGlobal.licence.setZ_PK(64);
+                Toast.makeText(this, "Đề thi hiện tại A4", Toast.LENGTH_SHORT).show();
                 break;
             }
 
             case B1:
             {
                 //TODO Mở màn hình thay loại bằng lái
-                Intent intentB1 = new Intent(MainActivity.this, TestKit.class);
-                Bundle bundle = new Bundle();
-                bundle.putInt("Z_PK", 65);
-                intentB1.putExtras(bundle);
-                startActivity(intentB1);
+                AppGlobal.licence.setZ_PK(65);
+                Toast.makeText(this, "Đề thi hiện tại B1", Toast.LENGTH_SHORT).show();
                 break;
             }
 
             case B2:
             {
                 //TODO Mở màn hình thay loại bằng lái
-                Intent intentB2 = new Intent(MainActivity.this, TestKit.class);
-                Bundle bundle = new Bundle();
-                bundle.putInt("Z_PK", 66);
-                intentB2.putExtras(bundle);
-                startActivity(intentB2);
+                AppGlobal.licence.setZ_PK(66);
+                Toast.makeText(this, "Đề thi hiện tại B2", Toast.LENGTH_SHORT).show();
                 break;
             }
 
             case C:
             {
                 //TODO Mở màn hình thay loại bằng lái
-                Intent intentC = new Intent(MainActivity.this, TestKit.class);
-                Bundle bundle = new Bundle();
-                bundle.putInt("Z_PK", 67);
-                intentC.putExtras(bundle);
-                startActivity(intentC);
+                AppGlobal.licence.setZ_PK(67);
+                Toast.makeText(this, "Đề thi hiện tại C", Toast.LENGTH_SHORT).show();
+                break;
             }
 
             case D:
             {
                 //TODO Mở màn hình thay loại bằng lái
-                Intent intentD = new Intent(MainActivity.this, TestKit.class);
-                Bundle bundle = new Bundle();
-                bundle.putInt("Z_PK", 68);
-                intentD.putExtras(bundle);
-                startActivity(intentD);
+                AppGlobal.licence.setZ_PK(68);
+                Toast.makeText(this, "Đề thi hiện tại D", Toast.LENGTH_SHORT).show();
                 break;
             }
 
             case E:
             {
                 //TODO Mở màn hình thay loại bằng lái
-                Intent intentE = new Intent(MainActivity.this, TestKit.class);
-                Bundle bundle = new Bundle();
-                bundle.putInt("Z_PK", 69);
-                intentE.putExtras(bundle);
-                startActivity(intentE);
+                AppGlobal.licence.setZ_PK(69);
+                Toast.makeText(this, "Đề thi hiện tại E", Toast.LENGTH_SHORT).show();
+                break;
             }
 
             case F:
             {
                 //TODO Mở màn hình thay loại bằng lái
-                Intent intentF = new Intent(MainActivity.this, TestKit.class);
-                Bundle bundle = new Bundle();
-                bundle.putInt("Z_PK", 70);
-                intentF.putExtras(bundle);
-                startActivity(intentF);
+                AppGlobal.licence.setZ_PK(70);
+                Toast.makeText(this, "Đề thi hiện tại F", Toast.LENGTH_SHORT).show();
                 break;
             }
 

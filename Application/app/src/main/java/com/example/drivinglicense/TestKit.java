@@ -10,6 +10,7 @@ import android.widget.GridView;
 
 import com.example.drivinglicense.adapter.LicenceAdapter;
 import com.example.drivinglicense.db.DBManager;
+import com.example.drivinglicense.global.AppGlobal;
 import com.example.drivinglicense.model.Licence;
 
 import java.util.ArrayList;
@@ -25,11 +26,10 @@ public class TestKit extends AppCompatActivity {
         setContentView(R.layout.activity_test_kit);
         dbManager = new DBManager(this);
         Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        int id = bundle.getInt("Z_PK");
-        String name = dbManager.getLicenceNameById(id);
-        int num = dbManager.getNumberOfTestByLisenceId(id);
-
+        if (AppGlobal.licence.getZ_PK() == 0)
+            AppGlobal.licence.setZ_PK(61);
+        String name = dbManager.getLicenceNameById(AppGlobal.licence.getZ_PK());
+        int num = dbManager.getNumberOfTestByLisenceId(AppGlobal.licence.getZ_PK());
         licenceArrayList = new ArrayList<>();
         licenceArrayList = getAllTest(name, num);
         gv = (GridView) findViewById(R.id.gvTest);

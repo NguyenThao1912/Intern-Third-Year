@@ -1,6 +1,7 @@
 package com.example.drivinglicense.model;
 
 public class Licence {
+    private int Z_PK;
     private int Z_ENT;
     private int Z_OPT;
     private int Z_NUMBER_OF_CORRECT_QUESTION;
@@ -30,6 +31,14 @@ public class Licence {
         this.ZCONTENT = ZCONTENT;
         this.ZDESC = ZDESC;
         this.ZNAME = ZNAME;
+    }
+
+    public int getZ_PK() {
+        return Z_PK;
+    }
+
+    public void setZ_PK(int z_PK) {
+        Z_PK = z_PK;
     }
 
     public int getZ_ENT() {
