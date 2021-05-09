@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DrivingLicense">
         <activity
-            android:name=".TestKit"
+            android:name=".views.TestKit"
             android:icon="@drawable/ic_traffic_lights"
             android:label="Đề Thi Bằng A1" />
         <activity
-            android:name=".MainActivity"
+            android:name=".views.MainActivity"
             android:label="Ôn Thi GPLX">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

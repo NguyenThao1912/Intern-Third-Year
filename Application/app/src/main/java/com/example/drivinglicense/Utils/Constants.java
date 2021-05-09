@@ -14,5 +14,18 @@ public class Constants {
     public static String TABLE_NOTICE_BOARD = "TABLE_NOTICE_BOARD";
     public static String TABLE_NOTICE_BOARDTYPE = "TABLE_NOTICE_BOARD_TYPE";
     public static String TABLE_NUMBER_QUESTION_PER_TYPE = "ZNUMBERQUESTIONPERTYPE";
-
+    public static String[]  COLLUMN_QUESTION = {"Z_PK",
+            "ZQUESTIONCONTENT",
+            "ZIMAGE",
+            "ZOPTION1",
+            "ZOPTION2",
+            "ZOPTION3",
+            "ZOPTION4",
+            "ZANSWERDESC",
+            "ZANSWERS",
+            "ZQUESTIONTYPE",
+            "ZLEARNED",
+            "ZMARKED",
+            "ZWRONG",
+            "ZINCLUDEA1","ZINCLUDEA2","ZINCLUDEA34","ZINCLUDEB1","ZINCLUDEB2","ZINCLUDEC","ZINCLUDEDEF","ZQUESTIONDIE","ZAWSA1","ZENT"};
 }

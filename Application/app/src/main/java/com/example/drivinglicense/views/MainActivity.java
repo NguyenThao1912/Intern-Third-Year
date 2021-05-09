@@ -1,25 +1,23 @@
-package com.example.drivinglicense;
+package com.example.drivinglicense.views;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.GridView;
 import android.widget.Toast;
 
-import com.example.drivinglicense.adapter.LicenceAdapter;
+import com.example.drivinglicense.R;
 import com.example.drivinglicense.db.DBManager;
 import com.example.drivinglicense.global.AppGlobal;
-import com.example.drivinglicense.model.Licence;
+import com.example.drivinglicense.model.Question;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import static com.example.drivinglicense.R.id.A1;
 import static com.example.drivinglicense.R.id.A2;
@@ -33,14 +31,10 @@ import static com.example.drivinglicense.R.id.E;
 import static com.example.drivinglicense.R.id.F;
 
 public class MainActivity extends AppCompatActivity {
-    private DBManager dbManager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        dbManager = new DBManager(this);
-        dbManager.getAllQuestion();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -140,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
     public void Dethi(View view)
     {
         Toast.makeText(this, "Thi sát hạch click", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this,TestKit.class);
+        Intent intent = new Intent(this, TestKit.class);
         startActivity(intent);
     }
     public void DeNgauNhien(View view)

@@ -1,22 +1,23 @@
 package com.example.drivinglicense.model;
 
 public class Question {
-    //private int Z_PK;
-    private String ZQUESTIONCONTENT;
-    private String ZIMGAE;
-    private String ZOPTION1;
-    private String ZOPTION2;
-    private String ZOPTION3;
-    private String ZOPTION4;
-    private int ZANSWERDESC;
-    private int ZANSWERS;
-    private String ZQUESTIONDIE;
-    private String ZAWSA1;
+
+    private int Z_PK;             //khóa chính
+    private String ZQUESTIONCONTENT;// nội dung câu hỏi
+    private String ZIMAGE;          //ảnh
+    private String ZOPTION1;        //lựa chọn 1
+    private String ZOPTION2;        //lựa chọn 2
+    private String ZOPTION3;        //lựa chọn 3
+    private String ZOPTION4;        //lựa chọn 4
+    private String ZANSWERDESC;     //nội dung đáp án
+    private int ZANSWERS;           //vị trí đáp án đáp án
+    private int ZQUESTIONDIE;       //câu điểm liệt
+    private int ZLEARNED;           //đã học
+    private int ZMARKED;            //đã đánh dấu
+    private int ZWRONG;             //sai ?
+
 /*
     private int ZQUESTIONTYPE;
-    private int ZLEARNED;
-    private int ZMARKED;
-    private int ZWRONG;
     private int ZINCLUDEA1;
     private int ZINCLUDEA2;
     private int ZINCLUDEA34;
@@ -29,6 +30,22 @@ public class Question {
     public Question() {
     }
 
+    public Question(int z_PK, String ZQUESTIONCONTENT, String ZIMAGE, String ZOPTION1, String ZOPTION2, String ZOPTION3, String ZOPTION4, String ZANSWERDESC, int ZANSWERS, int ZQUESTIONDIE, int ZLEARNED, int ZMARKED, int ZWRONG) {
+        Z_PK = z_PK;
+        this.ZQUESTIONCONTENT = ZQUESTIONCONTENT;
+        this.ZIMAGE = ZIMAGE;
+        this.ZOPTION1 = ZOPTION1;
+        this.ZOPTION2 = ZOPTION2;
+        this.ZOPTION3 = ZOPTION3;
+        this.ZOPTION4 = ZOPTION4;
+        this.ZANSWERDESC = ZANSWERDESC;
+        this.ZANSWERS = ZANSWERS;
+        this.ZQUESTIONDIE = ZQUESTIONDIE;
+        this.ZLEARNED = ZLEARNED;
+        this.ZMARKED = ZMARKED;
+        this.ZWRONG = ZWRONG;
+    }
+
     public String getZQUESTIONCONTENT() {
         return ZQUESTIONCONTENT;
     }
@@ -37,12 +54,12 @@ public class Question {
         this.ZQUESTIONCONTENT = ZQUESTIONCONTENT;
     }
 
-    public String getZIMGAE() {
-        return ZIMGAE;
+    public String getZIMAGE() {
+        return ZIMAGE;
     }
 
-    public void setZIMGAE(String ZIMGAE) {
-        this.ZIMGAE = ZIMGAE;
+    public void setZIMAGE(String ZIMAGE) {
+        this.ZIMAGE = ZIMAGE;
     }
 
     public String getZOPTION1() {
@@ -77,11 +94,11 @@ public class Question {
         this.ZOPTION4 = ZOPTION4;
     }
 
-    public int getZANSWERDESC() {
+    public String getZANSWERDESC() {
         return ZANSWERDESC;
     }
 
-    public void setZANSWERDESC(int ZANSWERDESC) {
+    public void setZANSWERDESC(String ZANSWERDESC) {
         this.ZANSWERDESC = ZANSWERDESC;
     }
 
@@ -93,32 +110,43 @@ public class Question {
         this.ZANSWERS = ZANSWERS;
     }
 
-    public String getZQUESTIONDIE() {
+    public int getZQUESTIONDIE() {
         return ZQUESTIONDIE;
     }
 
-    public void setZQUESTIONDIE(String ZQUESTIONDIE) {
+    public void setZQUESTIONDIE(int ZQUESTIONDIE) {
         this.ZQUESTIONDIE = ZQUESTIONDIE;
     }
 
-    public String getZAWSA1() {
-        return ZAWSA1;
+    public int getZLEARNED() {
+        return ZLEARNED;
     }
 
-    public void setZAWSA1(String ZAWSA1) {
-        this.ZAWSA1 = ZAWSA1;
+    public void setZLEARNED(int ZLEARNED) {
+        this.ZLEARNED = ZLEARNED;
     }
 
-    public Question(String ZQUESTIONCONTENT, String ZIMGAE, String ZOPTION1, String ZOPTION2, String ZOPTION3, String ZOPTION4, int ZANSWERDESC, int ZANSWERS, String ZQUESTIONDIE, String ZAWSA1) {
-        this.ZQUESTIONCONTENT = ZQUESTIONCONTENT;
-        this.ZIMGAE = ZIMGAE;
-        this.ZOPTION1 = ZOPTION1;
-        this.ZOPTION2 = ZOPTION2;
-        this.ZOPTION3 = ZOPTION3;
-        this.ZOPTION4 = ZOPTION4;
-        this.ZANSWERDESC = ZANSWERDESC;
-        this.ZANSWERS = ZANSWERS;
-        this.ZQUESTIONDIE = ZQUESTIONDIE;
-        this.ZAWSA1 = ZAWSA1;
+    public int getZMARKED() {
+        return ZMARKED;
     }
+
+    public void setZMARKED(int ZMARKED) {
+        this.ZMARKED = ZMARKED;
+    }
+
+    public int getZWRONG() {
+        return ZWRONG;
+    }
+
+    public void setZWRONG(int ZWRONG) {
+        this.ZWRONG = ZWRONG;
+    }
+    public int getZ_PK() {
+        return Z_PK;
+    }
+
+    public void setZ_PK(int z_PK) {
+        Z_PK = z_PK;
+    }
+
 }
