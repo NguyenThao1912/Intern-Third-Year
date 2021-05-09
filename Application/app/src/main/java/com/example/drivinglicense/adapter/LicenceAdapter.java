@@ -50,7 +50,7 @@ public class LicenceAdapter extends BaseAdapter {
 
         Licence licence = licenceArrayList.get(position);
 
-        kind.setText(licence.getZNAME());
+        kind.setText("Đề thi số");
         numOfKind.setText(String.valueOf(licence.getMS()));
 
 
