@@ -91,29 +91,15 @@ public class DBManager {
         closeDatabase();
     }
 
-    public int getNumberOfTestByLisenceId(int id) {
+    //Get all licence data by licence id
+    public Cursor getLicenceData(int id) {
         openDatabase();
-        int num = 0;
         Cursor cursor = database.rawQuery("SELECT * FROM " + Constants.TABLE_LICENSE + " WHERE Z_PK = " + id, null);
         while (cursor.moveToNext()) {
-            num = cursor.getInt(5);
-            return num;
+            return cursor;
         }
         closeDatabase();
-        return num;
-    }
-
-    //Lay ten loai bang lai qua Z_PK
-    public String getLicenceNameById(int id) {
-        openDatabase();
-        String name = "";
-        Cursor cursor = database.rawQuery("SELECT * FROM " + Constants.TABLE_LICENSE + " WHERE Z_PK = " + id, null);
-        while (cursor.moveToNext()) {
-            name = cursor.getString(9);
-            return name;
-        }
-        closeDatabase();
-        return name;
+        return cursor;
     }
 
 }

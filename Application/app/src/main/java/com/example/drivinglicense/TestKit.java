@@ -3,6 +3,7 @@ package com.example.drivinglicense;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
@@ -27,8 +28,11 @@ public class TestKit extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         int id = bundle.getInt("Z_PK");
-        String name = dbManager.getLicenceNameById(id);
-        int num = dbManager.getNumberOfTestByLisenceId(id);
+
+        Cursor cursor = dbManager.getLicenceData(id);
+
+        String name = cursor.getString(9);
+        int num = cursor.getInt(5);
 
         licenceArrayList = new ArrayList<>();
         licenceArrayList = getAllTest(name, num);
