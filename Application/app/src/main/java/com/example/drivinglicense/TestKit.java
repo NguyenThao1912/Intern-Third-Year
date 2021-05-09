@@ -2,7 +2,9 @@ package com.example.drivinglicense;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
@@ -25,11 +27,14 @@ public class TestKit extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_kit);
         dbManager = new DBManager(this);
-        Intent intent = getIntent();
-        if (AppGlobal.licence.getZ_PK() == 0)
-            AppGlobal.licence.setZ_PK(61);
-        String name = dbManager.getLicenceNameById(AppGlobal.licence.getZ_PK());
-        int num = dbManager.getNumberOfTestByLisenceId(AppGlobal.licence.getZ_PK());
+
+        Cursor cursor = dbManager.getLicenceData(AppGlobal.licence.getZ_PK());
+
+        String name = cursor.getString(9);
+        int num = cursor.getInt(5);
+
+        getSupportActionBar().setTitle("Đề Thi Bằng " + name);
+
         licenceArrayList = new ArrayList<>();
         licenceArrayList = getAllTest(name, num);
         gv = (GridView) findViewById(R.id.gvTest);
