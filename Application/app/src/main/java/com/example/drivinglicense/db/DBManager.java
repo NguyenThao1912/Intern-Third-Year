@@ -6,10 +6,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
 import android.util.Log;
 
+import com.example.drivinglicense.Utils.Constants;
+import com.example.drivinglicense.model.Licence;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 public class DBManager {
     private Context context;
@@ -86,4 +90,30 @@ public class DBManager {
         }
         closeDatabase();
     }
+
+    public int getNumberOfTestByLisenceId(int id) {
+        openDatabase();
+        int num = 0;
+        Cursor cursor = database.rawQuery("SELECT * FROM " + Constants.TABLE_LICENSE + " WHERE Z_PK = " + id, null);
+        while (cursor.moveToNext()) {
+            num = cursor.getInt(5);
+            return num;
+        }
+        closeDatabase();
+        return num;
+    }
+
+    //Lay ten loai bang lai qua Z_PK
+    public String getLicenceNameById(int id) {
+        openDatabase();
+        String name = "";
+        Cursor cursor = database.rawQuery("SELECT * FROM " + Constants.TABLE_LICENSE + " WHERE Z_PK = " + id, null);
+        while (cursor.moveToNext()) {
+            name = cursor.getString(9);
+            return name;
+        }
+        closeDatabase();
+        return name;
+    }
+
 }

@@ -10,8 +10,14 @@ public class Licence {
     private String ZCONTENT;
     private String ZDESC; // Mô tả
     private String ZNAME;// Tên bằng lái
+    private int MS;
 
     public Licence() {
+    }
+
+    public Licence(String name, int ms) {
+        ZNAME = name;
+        MS = ms;
     }
 
     public Licence(int z_ENT, int z_OPT, int z_NUMBER_OF_CORRECT_QUESTION, int z_NUMBER_OF_QUESTION, int z_NUMBER_OF_TEST, float ZDURATION, String ZCONTENT, String ZDESC, String ZNAME) {
@@ -96,5 +102,13 @@ public class Licence {
 
     public void setZNAME(String ZNAME) {
         this.ZNAME = ZNAME;
+    }
+
+    public int getMS() {
+        return MS;
+    }
+
+    public void setMS(int MS) {
+        this.MS = MS;
     }
 }

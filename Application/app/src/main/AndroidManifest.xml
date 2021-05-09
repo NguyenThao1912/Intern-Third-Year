@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DrivingLicense">
-        <activity android:name=".TestKit"
+        <activity
+            android:name=".TestKit"
             android:icon="@drawable/ic_traffic_lights"
-            android:label="Đề Thi Bằng A1"></activity>
+            android:label="Đề Thi Bằng A1" />
         <activity
             android:name=".MainActivity"
             android:label="Ôn Thi GPLX">
