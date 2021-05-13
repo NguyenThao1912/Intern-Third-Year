@@ -30,6 +30,9 @@ android {
         jcenter()
         maven { url "https://jitpack.io" }
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
