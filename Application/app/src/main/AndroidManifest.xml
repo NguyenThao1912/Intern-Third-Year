@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DrivingLicense">
+        <activity android:name=".ResultActivity"></activity>
+        <activity
+            android:name=".views.QuestionActivity"
+            android:label="@string/title_activity_question"
+            android:theme="@style/Theme.DrivingLicense.NoActionBar" />
         <activity
             android:name=".views.TestKit"
             android:icon="@drawable/ic_traffic_lights"
@@ -18,6 +23,7 @@
             android:label="Ôn Thi GPLX">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

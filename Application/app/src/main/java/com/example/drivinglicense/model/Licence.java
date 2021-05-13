@@ -21,7 +21,8 @@ public class Licence {
         MS = ms;
     }
 
-    public Licence(int z_ENT, int z_OPT, int z_NUMBER_OF_CORRECT_QUESTION, int z_NUMBER_OF_QUESTION, int z_NUMBER_OF_TEST, float ZDURATION, String ZCONTENT, String ZDESC, String ZNAME) {
+    public Licence(int z_PK, int z_ENT, int z_OPT, int z_NUMBER_OF_CORRECT_QUESTION, int z_NUMBER_OF_QUESTION, int z_NUMBER_OF_TEST, float ZDURATION, String ZCONTENT, String ZDESC, String ZNAME) {
+        Z_PK = z_PK;
         Z_ENT = z_ENT;
         Z_OPT = z_OPT;
         Z_NUMBER_OF_CORRECT_QUESTION = z_NUMBER_OF_CORRECT_QUESTION;
@@ -32,6 +33,17 @@ public class Licence {
         this.ZDESC = ZDESC;
         this.ZNAME = ZNAME;
     }
+//    public Licence(int z_ENT, int z_OPT, int z_NUMBER_OF_CORRECT_QUESTION, int z_NUMBER_OF_QUESTION, int z_NUMBER_OF_TEST, float ZDURATION, String ZCONTENT, String ZDESC, String ZNAME) {
+//        Z_ENT = z_ENT;
+//        Z_OPT = z_OPT;
+//        Z_NUMBER_OF_CORRECT_QUESTION = z_NUMBER_OF_CORRECT_QUESTION;
+//        Z_NUMBER_OF_QUESTION = z_NUMBER_OF_QUESTION;
+//        Z_NUMBER_OF_TEST = z_NUMBER_OF_TEST;
+//        this.ZDURATION = ZDURATION;
+//        this.ZCONTENT = ZCONTENT;
+//        this.ZDESC = ZDESC;
+//        this.ZNAME = ZNAME;
+//    }
 
     public int getZ_PK() {
         return Z_PK;

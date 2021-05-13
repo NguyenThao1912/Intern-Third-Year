@@ -16,17 +16,17 @@ public class Question {
     private int ZMARKED;            //đã đánh dấu
     private int ZWRONG;             //sai ?
 
-/*
-    private int ZQUESTIONTYPE;
-    private int ZINCLUDEA1;
-    private int ZINCLUDEA2;
-    private int ZINCLUDEA34;
-    private int ZINCLUDEB1;
-    private int ZINCLUDEB2;
-    private int ZINCLUDEC;
-    private int ZINCLUDEDEF;
-    private int Z_ENT;
-*/
+    /*
+        private int ZQUESTIONTYPE;
+        private int ZINCLUDEA1;
+        private int ZINCLUDEA2;
+        private int ZINCLUDEA34;
+        private int ZINCLUDEB1;
+        private int ZINCLUDEB2;
+        private int ZINCLUDEC;
+        private int ZINCLUDEDEF;
+        private int Z_ENT;
+    */
     public Question() {
     }
 
@@ -141,6 +141,7 @@ public class Question {
     public void setZWRONG(int ZWRONG) {
         this.ZWRONG = ZWRONG;
     }
+
     public int getZ_PK() {
         return Z_PK;
     }

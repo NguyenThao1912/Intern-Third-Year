@@ -1,11 +1,9 @@
 package com.example.drivinglicense.model;
 
 public class Test {
-    public int IDTEST;
     private int NAME_TEST;
     private int ZCURRENT_QUEST;
     private int CURRENT_TIME;
-    private String CLASS_LICENCE;
     private String TIME_HIS;
     private int TOTAL_SUCESS;
     private int ISFINISH;

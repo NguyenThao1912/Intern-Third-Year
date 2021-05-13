@@ -23,6 +23,7 @@ public class LicenceAdapter extends BaseAdapter {
         this.licenceArrayList = arrayList;
         inflater = LayoutInflater.from(context);
     }
+
     @Override
     public int getCount() {
         return this.licenceArrayList.size();
@@ -45,8 +46,8 @@ public class LicenceAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.item_of_gridview, null, false);
         }
 
-        TextView kind = (TextView)convertView.findViewById(R.id.txtLicensename);
-        TextView numOfKind = (TextView)convertView.findViewById(R.id.txtNumberTestKit);
+        TextView kind = (TextView) convertView.findViewById(R.id.txtLicensename);
+        TextView numOfKind = (TextView) convertView.findViewById(R.id.txtNumberTestKit);
 
         Licence licence = licenceArrayList.get(position);
 

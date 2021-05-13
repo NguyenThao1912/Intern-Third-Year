@@ -1,23 +1,18 @@
 package com.example.drivinglicense.views;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.drivinglicense.R;
-import com.example.drivinglicense.db.DBManager;
-import com.example.drivinglicense.global.AppGlobal;
-import com.example.drivinglicense.model.Question;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.List;
+import com.example.drivinglicense.R;
+import com.example.drivinglicense.global.AppGlobal;
 
 import static com.example.drivinglicense.R.id.A1;
 import static com.example.drivinglicense.R.id.A2;
@@ -36,91 +31,81 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.option_menu,menu);
+        inflater.inflate(R.menu.option_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId())
-        {
-            case A1:
-            {
+        switch (item.getItemId()) {
+            case A1: {
                 //TODO Mở màn hình thay loại bằng lái
                 AppGlobal.licence.setZ_PK(61);
                 Toast.makeText(this, "Đề thi hiện tại A1", Toast.LENGTH_SHORT).show();
                 break;
             }
 
-            case A2:
-            {
+            case A2: {
                 //TODO Mở màn hình thay loại bằng lái
                 AppGlobal.licence.setZ_PK(62);
                 Toast.makeText(this, "Đề thi hiện tại A2", Toast.LENGTH_SHORT).show();
                 break;
             }
 
-            case A3:
-            {
+            case A3: {
                 //TODO Mở màn hình thay loại bằng lái
                 AppGlobal.licence.setZ_PK(63);
                 Toast.makeText(this, "Đề thi hiện tại A3", Toast.LENGTH_SHORT).show();
                 break;
             }
 
-            case A4:
-            {
+            case A4: {
                 //TODO Mở màn hình thay loại bằng lái
                 AppGlobal.licence.setZ_PK(64);
                 Toast.makeText(this, "Đề thi hiện tại A4", Toast.LENGTH_SHORT).show();
                 break;
             }
 
-            case B1:
-            {
+            case B1: {
                 //TODO Mở màn hình thay loại bằng lái
                 AppGlobal.licence.setZ_PK(65);
                 Toast.makeText(this, "Đề thi hiện tại B1", Toast.LENGTH_SHORT).show();
                 break;
             }
 
-            case B2:
-            {
+            case B2: {
                 //TODO Mở màn hình thay loại bằng lái
                 AppGlobal.licence.setZ_PK(66);
                 Toast.makeText(this, "Đề thi hiện tại B2", Toast.LENGTH_SHORT).show();
                 break;
             }
 
-            case C:
-            {
+            case C: {
                 //TODO Mở màn hình thay loại bằng lái
                 AppGlobal.licence.setZ_PK(67);
                 Toast.makeText(this, "Đề thi hiện tại C", Toast.LENGTH_SHORT).show();
                 break;
             }
 
-            case D:
-            {
+            case D: {
                 //TODO Mở màn hình thay loại bằng lái
                 AppGlobal.licence.setZ_PK(68);
                 Toast.makeText(this, "Đề thi hiện tại D", Toast.LENGTH_SHORT).show();
                 break;
             }
 
-            case E:
-            {
+            case E: {
                 //TODO Mở màn hình thay loại bằng lái
                 AppGlobal.licence.setZ_PK(69);
                 Toast.makeText(this, "Đề thi hiện tại E", Toast.LENGTH_SHORT).show();
                 break;
             }
 
-            case F:
-            {
+            case F: {
                 //TODO Mở màn hình thay loại bằng lái
                 AppGlobal.licence.setZ_PK(70);
                 Toast.makeText(this, "Đề thi hiện tại F", Toast.LENGTH_SHORT).show();
@@ -131,24 +116,23 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void Dethi(View view)
-    {
+    public void Dethi(View view) {
         Toast.makeText(this, "Thi sát hạch click", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, TestKit.class);
         startActivity(intent);
     }
-    public void DeNgauNhien(View view)
-    {
+
+    public void DeNgauNhien(View view) {
         Toast.makeText(this, "Đề ngẫu nhiên click", Toast.LENGTH_SHORT).show();
         // TODO Mở màn hình đề ngẫu nhiên
     }
-    public void LoaiBienBao(View view)
-    {
+
+    public void LoaiBienBao(View view) {
         Toast.makeText(this, "Thông tin biển báo click", Toast.LENGTH_SHORT).show();
         // TODo mở màn hình loại biển báo
     }
-    public void LoiKhuyen(View view)
-    {
+
+    public void LoiKhuyen(View view) {
         Toast.makeText(this, "Lời khuyên click", Toast.LENGTH_SHORT).show();
         // ToDo mở màn hình lời khuyên
     }
