@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.drivinglicense.R;
 import com.example.drivinglicense.global.AppGlobal;
+import com.example.drivinglicense.views.notice_board.ActivityNoticeBoard;
 
 import static com.example.drivinglicense.R.id.A1;
 import static com.example.drivinglicense.R.id.A2;
@@ -128,7 +129,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void LoaiBienBao(View view) {
-        Toast.makeText(this, "Thông tin biển báo click", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, ActivityNoticeBoard.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.open_activiy,R.anim.open_close_activity);
         // TODo mở màn hình loại biển báo
     }
 

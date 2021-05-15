@@ -8,6 +8,8 @@ import android.util.Log;
 
 import com.example.drivinglicense.Utils.Constants;
 import com.example.drivinglicense.model.Licence;
+import com.example.drivinglicense.model.NoticeBoard;
+import com.example.drivinglicense.model.NoticeBoardType;
 import com.example.drivinglicense.model.Question;
 
 import java.io.File;
@@ -190,6 +192,46 @@ public class DBManager {
             Log.d("", "" + e.getMessage());
             return questions;
         }
+    }
+
+    //TODO lấy danh sách loại biển báo
+    public List<NoticeBoardType> getListNoticeBoardType(){
+        List<NoticeBoardType> list = new ArrayList<>();
+
+        openDatabase();
+        Cursor cursor = database.query("TABLE_NOTICE_BOARD_TYPE", null, null, null, null, null, null);
+        while (cursor.moveToNext()) {
+            NoticeBoardType noticeBoardType = new NoticeBoardType(
+                    cursor.getInt(0),
+                    cursor.getString(1)
+            );
+
+            list.add(noticeBoardType);
+        }
+        closeDatabase();
+
+        return list;
+    }
+
+    //TODO lấy danh sách tất cả các biển báo
+    public List<NoticeBoard> getListNoticeBoard(){
+        List<NoticeBoard> list = new ArrayList<>();
+
+        openDatabase();
+        Cursor cursor = database.query("TABLE_NOTICE_BOARD", null, null, null, null, null, null);
+        while (cursor.moveToNext()) {
+            NoticeBoard noticeBoard = new NoticeBoard(
+                    cursor.getInt(1),
+                    cursor.getString(2),
+                    cursor.getString(4),
+                    cursor.getString(5)
+            );
+
+            list.add(noticeBoard);
+        }
+        closeDatabase();
+
+        return list;
     }
 
     interface object {
