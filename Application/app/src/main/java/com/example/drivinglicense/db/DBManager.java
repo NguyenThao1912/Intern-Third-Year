@@ -12,6 +12,8 @@ import com.example.drivinglicense.model.Licence;
 import com.example.drivinglicense.model.NoticeBoard;
 import com.example.drivinglicense.model.NoticeBoardType;
 import com.example.drivinglicense.model.Question;
+import com.example.drivinglicense.model.Tip;
+import com.example.drivinglicense.model.TipCategory;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -235,6 +237,44 @@ public class DBManager {
         return list;
     }
 
+    //TODO lấy danh sách mẹo
+    public List<Tip> getListTip(){
+        List<Tip> list = new ArrayList<>();
+
+        openDatabase();
+        Cursor cursor = database.query("ZTIP", null, null, null, null, null, null);
+        while (cursor.moveToNext()) {
+            Tip tip = new Tip(
+                    cursor.getInt(3),
+                    cursor.getString(4)
+            );
+
+            list.add(tip);
+        }
+        closeDatabase();
+
+        return list;
+    }
+
+    //TODO lấy danh sách thể loại mẹo
+    public List<TipCategory> getListTipCategory(){
+        List<TipCategory> list = new ArrayList<>();
+
+        openDatabase();
+        Cursor cursor = database.query("ZTIPCATEGORY", null, null, null, null, null, null);
+        while (cursor.moveToNext()) {
+            TipCategory tipCategory = new TipCategory(
+                    cursor.getInt(3),
+                    cursor.getInt(0),
+                    cursor.getString(5)
+            );
+
+            list.add(tipCategory);
+        }
+        closeDatabase();
+
+        return list;
+    }
     public Licence get_Licence_By_ID(int ID)
     {
         try

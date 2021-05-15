@@ -15,6 +15,7 @@ import com.example.drivinglicense.R;
 import com.example.drivinglicense.db.DBManager;
 import com.example.drivinglicense.global.AppGlobal;
 import com.example.drivinglicense.views.notice_board.ActivityNoticeBoard;
+import com.example.drivinglicense.views.tip.ActivityTip;
 
 import java.util.Random;
 
@@ -149,7 +150,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void LoiKhuyen(View view) {
-        Toast.makeText(this, "Lời khuyên click", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, ActivityTip.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.open_activiy,R.anim.open_close_activity);
         // ToDo mở màn hình lời khuyên
     }
 }
