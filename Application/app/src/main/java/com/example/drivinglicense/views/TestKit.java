@@ -2,6 +2,7 @@ package com.example.drivinglicense.views;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -28,13 +29,20 @@ public class TestKit extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_kit);
         dbManager = new DBManager(this);
-
+        if (AppGlobal.licence == null)
+        {
+            AppGlobal.licence = DBManager.getInstance(this).get_Licence_By_ID(61);
+        }
         ArrayList<Licence> licenceList = (ArrayList<Licence>) dbManager.getLicenceData(AppGlobal.licence.getZ_PK());
-//        getSupportActionBar().setTitle("Đề Thi Bằng " + licenceList.get(0).getZNAME());
-
+        Log.d(" xx", "onCreate: " + AppGlobal.licence.getZ_PK());
         AppGlobal.licence.setZNAME(licenceList.get(0).getZNAME());
         licenceArrayList = new ArrayList<>();
         licenceArrayList = getAllTest(licenceList);
+
+
+        //getSupportActionBar().setTitle("Đề Thi Bằng " + licenceList.get(0).getZNAME());
+
+
         gv = (GridView) findViewById(R.id.gvTest);
 
         licenceAdapter = new LicenceAdapter(TestKit.this, licenceArrayList);

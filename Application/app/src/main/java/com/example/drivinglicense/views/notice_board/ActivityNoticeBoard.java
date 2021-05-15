@@ -37,6 +37,6 @@ public class ActivityNoticeBoard extends AppCompatActivity{
     @Override
     public void finish() {
         super.finish();
-        overridePendingTransition(R.anim.close_open_activity,R.anim.close_activity);
+        //overridePendingTransition(R.anim.close_open_activity,R.anim.close_activity);
     }
 }

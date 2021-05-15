@@ -7,6 +7,7 @@ import android.os.Environment;
 import android.util.Log;
 
 import com.example.drivinglicense.Utils.Constants;
+import com.example.drivinglicense.global.AppGlobal;
 import com.example.drivinglicense.model.Licence;
 import com.example.drivinglicense.model.NoticeBoard;
 import com.example.drivinglicense.model.NoticeBoardType;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DBManager {
+    private static final String TAG = "DBManager";
     public static DBManager instance;
     private final Context context;
     private SQLiteDatabase database = null;
@@ -216,7 +218,6 @@ public class DBManager {
     //TODO lấy danh sách tất cả các biển báo
     public List<NoticeBoard> getListNoticeBoard(){
         List<NoticeBoard> list = new ArrayList<>();
-
         openDatabase();
         Cursor cursor = database.query("TABLE_NOTICE_BOARD", null, null, null, null, null, null);
         while (cursor.moveToNext()) {
@@ -234,6 +235,40 @@ public class DBManager {
         return list;
     }
 
+    public Licence get_Licence_By_ID(int ID)
+    {
+        try
+        {
+            Licence licence = new Licence();
+            openDatabase();
+            Cursor cursor = database.query(Constants.TABLE_LICENSE, null, "Z_PK = ?", new String[]{String.valueOf(ID)}, null, null, null);
+            if (cursor.getCount() > 0) {
+                cursor.moveToFirst();
+
+                    licence.setZ_PK(ID);
+                    licence.setZ_ENT(cursor.getInt(cursor.getColumnIndex("Z_ENT")));
+                    licence.setZ_OPT(cursor.getInt(cursor.getColumnIndex("Z_OPT")));
+                    licence.setZ_NUMBER_OF_CORRECT_QUESTION(cursor.getInt(cursor.getColumnIndex("ZNUMBEROFCORRECTQUESTION")));
+                    licence.setZ_NUMBER_OF_QUESTION(cursor.getInt(cursor.getColumnIndex("ZNUMBEROFQUESTION")));
+                    licence.setZ_NUMBER_OF_TEST(cursor.getInt(cursor.getColumnIndex("ZNUMBEROFTEST")));
+                    licence.setZDURATION(cursor.getFloat(cursor.getColumnIndex("ZDURATION")));
+                    licence.setZCONTENT(cursor.getString(cursor.getColumnIndex("ZCONTENT")));
+                    licence.setZDESC(cursor.getString(cursor.getColumnIndex("ZDESC")));
+                    licence.setZNAME(cursor.getString(cursor.getColumnIndex("ZNAME")));
+
+
+
+
+            }
+            closeDatabase();
+            return licence;
+        }
+        catch (Exception e)
+        {
+            Log.d(TAG, "get_Licence_By_ID: " + e.getMessage());
+            return null;
+        }
+    }
     interface object {
         String DB_NAME = "600question.db";
     }

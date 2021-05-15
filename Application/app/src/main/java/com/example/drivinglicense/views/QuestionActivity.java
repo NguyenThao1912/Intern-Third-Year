@@ -1,5 +1,6 @@
 package com.example.drivinglicense.views;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -51,7 +52,6 @@ public class QuestionActivity extends AppCompatActivity {
     TextView txt_timer;
     ViewPager viewPager;
     TabLayout tabLayout;
-    private AppBarConfiguration mAppBarConfiguration;
 
     @Override
     protected void onDestroy() {
@@ -61,20 +61,17 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
-                .setDrawerLayout(drawer)
-                .build();
 
         takeQuestion();
 
@@ -252,6 +249,7 @@ public class QuestionActivity extends AppCompatActivity {
         } else {
             AppGlobal.countDownTimer.cancel();
             AppGlobal.countDownTimer = new CountDownTimer(AppGlobal.TOTAL_TIME, 1000) {
+                @SuppressLint("DefaultLocale")
                 @Override
                 public void onTick(long l) {
                     txt_timer.setText(String.format("%02d:%02d",

@@ -9,11 +9,12 @@
             android:layout_margin="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="18dp"
-            app:cardElevation="8dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="3dp"
             >
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_margin="2dp"
+                android:padding="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/rc"/>

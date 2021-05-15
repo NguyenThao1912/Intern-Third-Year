@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ActivityExam extends AppCompatActivity implements View.OnClickListener, Animation.AnimationListener {
-   private ActivityExamBinding binding;
+    private ActivityExamBinding binding;
     private Question question = new Question();
 
     @Override

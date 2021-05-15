@@ -1,5 +1,6 @@
 package com.example.drivinglicense.global;
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.CountDownTimer;
 
@@ -13,13 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeSet;
 
-public class AppGlobal {
-
+public class AppGlobal extends Application {
 
     // TODO cần lưu lại biến này vào bộ nhớ máy khi mở ứng dụng lên thì đọc lại
     public static final int TOTAL_TIME = 20 * 60 * 1000;
     public static final String KEY_BACK_FROM_RESULT = "BACK FROM RESULT";
-    public static Licence licence = new Licence();
+    public static Licence licence;
     public static int currentTestId = 0;
     public static List<Question> questionList = new ArrayList<>();
     public static List<CurrentQuestion> answerSheetList = new ArrayList<>();
