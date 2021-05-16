@@ -1,9 +1,14 @@
 package com.example.drivinglicense.fragment;
 
+import android.content.res.AssetFileDescriptor;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,13 +30,16 @@ import com.example.drivinglicense.model.Question;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link QuestionFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class QuestionFragment extends Fragment implements IQuestion {
-
+    private static final String TAG = "QuestionFragment";
     TextView txt_question_text;
     CheckBox ckbA, ckbB, ckbC, ckbD;
     FrameLayout layout_image;
@@ -92,24 +100,22 @@ public class QuestionFragment extends Fragment implements IQuestion {
 
             layout_image = itemView.findViewById(R.id.layout_image);
             progressBar = itemView.findViewById(R.id.progressBar);
-
-//            if (question.getZIMAGE() != "") {
-//                ImageView img = itemView.findViewById(R.id.img_question);
-//                Picasso.get().load(question.getZIMAGE()).into(img, new Callback() {
-//                    @Override
-//                    public void onSuccess() {
-//                        progressBar.setVisibility(View.GONE);
-//                    }
-//
-//                    @Override
-//                    public void onError(Exception e) {
-//                        Toast.makeText(getContext(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//            } else {
-//                layout_image.setVisibility(View.GONE);
-//            }
-
+            try {
+                if (!question.getZIMAGE().equals("")) {
+                    ImageView img = itemView.findViewById(R.id.img_question);
+                    InputStream is = getContext().getAssets().open("imageapp_600/"+question.getZIMAGE());
+                    Bitmap  bitmap = BitmapFactory.decodeStream(is);
+                    img.setImageBitmap(bitmap);
+                    progressBar.setVisibility(View.GONE);
+                }
+                else {
+                    progressBar.setVisibility(View.GONE);
+                    layout_image.setVisibility(View.GONE);
+                }
+            }catch (Exception e)
+            {
+                Log.d(TAG, "onCreateView: " + e.getMessage());
+            }
 
             txt_question_text = itemView.findViewById(R.id.txt_question_text);
             txt_question_text.setText(question.getZQUESTIONCONTENT());

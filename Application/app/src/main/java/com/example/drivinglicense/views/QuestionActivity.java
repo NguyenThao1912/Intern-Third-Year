@@ -146,8 +146,14 @@ public class QuestionActivity extends AppCompatActivity {
                         questionFragment = AppGlobal.fragmentList.get(position - 1);
                         pos = position - 1;
                     } else if (iScrollLeft()) {
-                        questionFragment = AppGlobal.fragmentList.get(position + 1);
-                        pos = position + 1;
+                        if (position < AppGlobal.fragmentList.size()-1) {
+                            questionFragment = AppGlobal.fragmentList.get(position + 1);
+                            pos = position + 1;
+                        }else
+                        {
+                            questionFragment = AppGlobal.fragmentList.get(position);
+                            pos = position ;
+                        }
                     } else {
                         questionFragment = AppGlobal.fragmentList.get(pos);
                     }
@@ -157,7 +163,7 @@ public class QuestionActivity extends AppCompatActivity {
                 }
 
                 CurrentQuestion question_state = questionFragment.getSelectedAnswer();
-                AppGlobal.answerSheetList.set(pos, question_state);
+                AppGlobal.answerSheetList.set(position, question_state);
                 adapter.notifyDataSetChanged();
 
                 countCorrectAnswer();
@@ -269,10 +275,12 @@ public class QuestionActivity extends AppCompatActivity {
 
     private void takeQuestion() {
         AppGlobal.questionList = DBManager.getInstance(this).getListQuestion_By_TestIndex_AND_LicenceName(AppGlobal.currentTestId, AppGlobal.licence.getZNAME());
+
         if (AppGlobal.questionList.size() == 0) {
             new MaterialStyledDatePickerDialog.Builder(this)
                     .setTitle("Wrong");
         } else {
+            AppGlobal.answerSheetList.clear();
             for (int i = 0; i < AppGlobal.questionList.size(); i++) {
                 AppGlobal.answerSheetList.add(new CurrentQuestion(i, AppGlobal.ANSWER_TYPE.NO_ANSWER));
             }

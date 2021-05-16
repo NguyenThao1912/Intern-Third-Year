@@ -3,11 +3,13 @@ package com.example.drivinglicense.views;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toolbar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.drivinglicense.R;
@@ -40,11 +42,11 @@ public class TestKit extends AppCompatActivity {
         licenceArrayList = getAllTest(licenceList);
 
 
-        //getSupportActionBar().setTitle("Đề Thi Bằng " + licenceList.get(0).getZNAME());
-
-
+        getSupportActionBar().setTitle("Đề Thi Bằng " + AppGlobal.licence.getZNAME());
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         gv = (GridView) findViewById(R.id.gvTest);
-
+        gv.setPadding(10,10,10,10);
         licenceAdapter = new LicenceAdapter(TestKit.this, licenceArrayList);
         gv.setAdapter(licenceAdapter);
 
@@ -56,6 +58,17 @@ public class TestKit extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.home:{
+                finish();
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public ArrayList<Licence> getAllTest(ArrayList<Licence> list) {
