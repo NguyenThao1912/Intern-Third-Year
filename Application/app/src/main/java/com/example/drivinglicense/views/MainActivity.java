@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.drivinglicense.R;
 import com.example.drivinglicense.db.DBManager;
 import com.example.drivinglicense.global.AppGlobal;
+import com.example.drivinglicense.views.dethi.ActivityDeThi;
 import com.example.drivinglicense.views.notice_board.ActivityNoticeBoard;
 import com.example.drivinglicense.views.tip.ActivityTip;
 
@@ -124,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void Dethi(View view) {
 
-        Intent intent = new Intent(this, TestKit.class);
+        Intent intent = new Intent(this, ActivityDeThi.class);
         startActivity(intent);
     }
 

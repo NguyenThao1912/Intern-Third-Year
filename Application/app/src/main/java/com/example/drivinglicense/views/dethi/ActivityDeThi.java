@@ -1,10 +1,13 @@
 package com.example.drivinglicense.views.dethi;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -16,11 +19,13 @@ import com.example.drivinglicense.databinding.ActivityDethiBinding;
 import com.example.drivinglicense.db.DBManager;
 import com.example.drivinglicense.global.AppGlobal;
 import com.example.drivinglicense.model.Licence;
+import com.example.drivinglicense.views.QuestionActivity;
+import com.example.drivinglicense.views.TestKit;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActivityDeThi extends AppCompatActivity {
+public class ActivityDeThi extends AppCompatActivity implements AdapterDeThi.onItemListener {
     private ActivityDethiBinding binding;
     private List<Licence> licences = new ArrayList<>();
     private DBManager dbManager;
@@ -34,22 +39,28 @@ public class ActivityDeThi extends AppCompatActivity {
         {
             AppGlobal.licence = DBManager.getInstance(this).get_Licence_By_ID(61);
         }
+
         ArrayList<Licence> licenceList = (ArrayList<Licence>) dbManager.getLicenceData(AppGlobal.licence.getZ_PK());
         Log.d(" xx", "onCreate: " + AppGlobal.licence.getZ_PK());
-        AppGlobal.licence.setZNAME(licenceList.get(0).getZNAME());
+        getSupportActionBar().setTitle("Đề Thi Bằng " + AppGlobal.licence.getZNAME());
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         licences = new ArrayList<>();
         licences = getAllTest(licenceList);
         binding.rc.setLayoutManager(new LinearLayoutManager(this));
-        binding.rc.setAdapter(new AdapterDeThi(licences));
-        setOnClickButton();
+        binding.rc.setAdapter(new AdapterDeThi(licences,this));
+
     }
-    private void setOnClickButton(){
-        binding.btBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.home:{
+                finish();
             }
-        });
+        }
+        return super.onOptionsItemSelected(item);
     }
     public ArrayList<Licence> getAllTest(ArrayList<Licence> list) {
         ArrayList<Licence> arrayList = new ArrayList<>();
@@ -59,5 +70,12 @@ public class ActivityDeThi extends AppCompatActivity {
             i++;
         }
         return arrayList;
+    }
+
+    @Override
+    public void onClick_LamBai(int position) {
+        Intent intent = new Intent(ActivityDeThi.this, QuestionActivity.class);
+        AppGlobal.currentTestId = position + 1;
+        startActivity(intent);
     }
 }
